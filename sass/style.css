@@ -1,0 +1,48 @@
+.main {
+  text-align: center;
+  background-color: blue;
+  color: white;
+  margin: auto;
+  min-height: 300px;
+  max-width: 600px;
+  border: 3px solid black;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+}
+
+.main_welcome {
+  padding: 20px;
+}
+
+.container div {
+  width: 300px;
+  margin: 10px;
+  text-align: center;
+  font-size: 20px;
+}
+
+#buttons {
+  justify-content: center;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  background-color: white;
+}
+
+#buttons button {
+  margin: 5px;
+  font-weight: bold;
+}
+
+#messages {
+  border: white solid 3px;
+  min-width: 100px;
+  min-height: 70px;
+}/*# sourceMappingURL=style.css.map */
