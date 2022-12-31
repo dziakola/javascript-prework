@@ -1,8 +1,9 @@
-var computerMove, playerMove, playerInput, randomNumber, buttonRock, buttonScissors, buttonPaper;
+var computerMove, playerMove, playerInput, randomNumber, buttonRock, buttonScissors, buttonPaper, resultPlayer, resultComputer;
 buttonRock = document.getElementById('button-rock');
 buttonPaper = document.getElementById('button-paper');
 buttonScissors = document.getElementById('button-scissors');
-
+resultPlayer = 0;
+resultComputer = 0;
 function buttonClicked(buttonName){
   clearMessages();
   console.log(`Przycisk ${buttonName} został kliknięty`);  
@@ -34,19 +35,27 @@ function buttonClicked(buttonName){
       (PlayerMove == "kamień" && ComputerMove == "nożyce") ||
       (PlayerMove == "nożyce" && ComputerMove == "papier")
     ) {
+      printMessage("Zagrałem " + ComputerMove + ", a Ty " + PlayerMove);
       printMessage("Wygrywasz!");
+      resultPlayer++;
+      return resultPlayer;
     } else if (PlayerMove == ComputerMove) {
+      printMessage("Zagrałem " + ComputerMove + ", a Ty " + PlayerMove);
       printMessage("Remis");
     } else {
+      printMessage("Zagrałem " + ComputerMove + ", a Ty " + PlayerMove);
       printMessage("Przegrywasz :(");
+      resultComputer++;
+      return resultComputer;
     }
-    printMessage("Zagrałem " + ComputerMove + ", a Ty " + PlayerMove);
   }
+  document.querySelector('#result').textContent = `wynik gracza to ${resultPlayer} wynik komputer: ${resultComputer}`;
   
 }
-
+console.log(`wynik gracza poza funkcją: ${resultPlayer} wynik komputera w funkcji ${resultComputer}`);
 buttonRock.addEventListener('click', function(){buttonClicked(`kamień`)});
 buttonPaper.addEventListener('click', function(){buttonClicked(`papier`)});
 buttonScissors.addEventListener('click', function(){buttonClicked(`nożyce`)});
 
 
+ 

@@ -32,14 +32,17 @@
     flex-direction: column;
     align-content: space-around;
     background-color: white;
-    
-   
 }
 #buttons button{
     margin: 5px;
     font-weight: bold;
 }
 #messages{
+    border: white solid 3px;
+    min-width: 100px;
+    min-height: 70px;
+}
+.main_result{
     border: white solid 3px;
     min-width: 100px;
     min-height: 70px;
