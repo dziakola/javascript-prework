@@ -15,35 +15,35 @@ function buttonClicked(buttonName) {
   displayResult(playerMove, computerMove);
 }
 //funckja potrzebna computerMove,arg to randomNumber
-function getMoveName(MoveId) {
-  if (MoveId == 1) {
+function getMoveName(moveId) {
+  if (moveId == 1) {
     return "kamień";
-  } else if (MoveId == 2) {
+  } else if (moveId == 2) {
     return "papier";
-  } else if (MoveId == 3) {
+  } else if (moveId == 3) {
     return "nożyce";
   } else {
     printMessage(
-      "Nie znam ruchu o id " + MoveId + '. Zakładam, że chodziło o "kamień".'
+      "Nie znam ruchu o id " + moveId + '. Zakładam, że chodziło o "kamień".'
     );
     return "kamień";
   }
 }
 
-function displayResult(PlayerOne, PlayerTwo) {
+function displayResult(playerOne, playerTwo) {
   if (
-    (PlayerOne == "papier" && PlayerTwo == "kamień") ||
-    (PlayerOne == "kamień" && PlayerTwo == "nożyce") ||
-    (PlayerOne == "nożyce" && PlayerTwo == "papier")
+    (playerOne == "papier" && playerTwo == "kamień") ||
+    (playerOne == "kamień" && playerTwo == "nożyce") ||
+    (playerOne == "nożyce" && playerTwo == "papier")
   ) {
-    printMessage("Zagrałem " + PlayerTwo + ", a Ty " + PlayerOne);
+    printMessage("Zagrałem " + playerTwo + ", a Ty " + playerOne);
     printMessage("Wygrywasz!");
     resultPlayer++;
-  } else if (PlayerOne == PlayerTwo) {
-    printMessage("Zagrałem " + PlayerTwo + ", a Ty " + PlayerOne);
+  } else if (playerOne == playerTwo) {
+    printMessage("Zagrałem " + playerTwo + ", a Ty " + playerOne);
     printMessage("Remis");
   } else {
-    printMessage("Zagrałem " + PlayerTwo + ", a Ty " + PlayerOne);
+    printMessage("Zagrałem " + playerTwo + ", a Ty " + playerOne);
     printMessage("Przegrywasz :(");
     resultComputer++;
   }
